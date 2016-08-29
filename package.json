@@ -1,0 +1,24 @@
+{
+  "name": "food2me",
+  "version": "1.0.0",
+  "description": "food delivery and fulfillment platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lthai423/food2me.git"
+  },
+  "author": "lthai423",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lthai423/food2me/issues"
+  },
+  "homepage": "https://github.com/lthai423/food2me#readme",
+  "dependencies": {
+    "mongodb": "^2.2.9",
+    "nodejs": "0.0.0",
+    "nodemon": "^1.10.2"
+  }
+}
