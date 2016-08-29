@@ -2,6 +2,9 @@
 var express = require('express');
 var app = express();
 
+// require file stream
+var fs = require('fs');
+
 // require mongodb and ORM dependencies
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
@@ -11,7 +14,10 @@ db.once('open', () => console.log('MongoDB Connected'));
 
 // route handling
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  fs.readFile('./index.html', (err, file) => {
+  res.writeHead(200, {contentType: 'plain/text' , /* */ });
+  res.send(file);
+  })
 });
 
 // turn server 'on'
