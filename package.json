@@ -4,7 +4,7 @@
   "description": "food delivery and fulfillment platform",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lthai423/food2me#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "mongodb": "^2.2.9",
     "nodejs": "0.0.0",
     "nodemon": "^1.10.2"
