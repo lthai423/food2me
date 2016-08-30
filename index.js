@@ -5,6 +5,8 @@ var app = express();
 // require file stream
 var fs = require('fs');
 
+var router = require('./routes.js');
+
 // require mongodb and ORM dependencies
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test');
@@ -12,14 +14,14 @@ var db = mongoose.connection;
 db.on('error', (err) => console.log(err));
 db.once('open', () => console.log('MongoDB Connected'));
 
-// route handling
-app.get('/', function (req, res) {
-  fs.readFile('./index.html', (err, file) => {
-  	res.statusCode = 200;
-	  res.contentType('text/html');
-	  res.send(file);
-  })
-});
+
+// set view and engines
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
+// route all to router
+app.get('*', router);
 
 // turn server 'on'
 app.listen(3000, function () {
