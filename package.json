@@ -4,7 +4,7 @@
   "description": "food delivery and fulfillment platform",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "commit": "git add . && git commit",
     "push": "git push origin master",
     "cat": "cat index.js"
