@@ -7,7 +7,7 @@ var fs = require('fs');
 
 var router = require('./routes.js');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 
 // require mongodb and ORM dependencies
 // var mongoose = require('mongoose');
@@ -27,5 +27,5 @@ app.get('*', router);
 
 // turn server 'on'
 app.listen(process.env.PORT, function () {
-  console.log('Food2Me app listening on port 3000!');
+  console.log('Food2Me app listening on port 5000!');
 });
