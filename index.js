@@ -9,7 +9,7 @@ var router = require('./routes.js');
 
 // require mongodb and ORM dependencies
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://tranquil-hollows-38103/herokuapp/test');
+mongoose.connect('mongodb://herokuapp/tranquil-hollows-38103/test');
 var db = mongoose.connection;
 db.on('error', (err) => console.log(err));
 db.once('open', () => console.log('MongoDB Connected'));
