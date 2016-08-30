@@ -7,6 +7,8 @@ var fs = require('fs');
 
 var router = require('./routes.js');
 
+app.set('port', process.env.PORT || 3000);
+
 // require mongodb and ORM dependencies
 // var mongoose = require('mongoose');
 // mongoose.connect('mongodb://herokuapp/tranquil-hollows-38103/test');
@@ -24,6 +26,6 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.get('*', router);
 
 // turn server 'on'
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
   console.log('Food2Me app listening on port 3000!');
 });
