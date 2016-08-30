@@ -15,8 +15,9 @@ db.once('open', () => console.log('MongoDB Connected'));
 // route handling
 app.get('/', function (req, res) {
   fs.readFile('./index.html', (err, file) => {
-  res.writeHead(200, {contentType: 'plain/text' , /* */ });
-  res.send(file);
+  	res.statusCode = 200;
+	  res.contentType('text/html');
+	  res.send(file);
   })
 });
 
