@@ -18,30 +18,30 @@ var fs = require('fs');
 app.set('port', process.env.PORT || 5000);
 
 // require mongodb and ORM dependencies
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/food2me');
-var db = mongoose.connection;
-db.on('error', (err) => console.log(err));
-db.once('open', () => {
-	console.log('MongoDB Connected');
-});
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/food2me');
+// var db = mongoose.connection;
+// db.on('error', (err) => console.log(err));
+// db.once('open', () => {
+// 	console.log('MongoDB Connected');
+// });
 
-var Schema = mongoose.Schema;
+// var Schema = mongoose.Schema;
 
-var RestaurantSchema = new Schema({
-  name:  String,
-  typeOfFood: String,
-  priceRange:   String,
-  avgDeliveryTime: Number,
-  date: { type: Date, default: Date.now },
-  meta: {
-    votes: Number,
-    favs:  Number
-  },
-  menuItems: [
-  	{item:String, price:Number}
-  ]
-});
+// var RestaurantSchema = new Schema({
+//   name:  String,
+//   typeOfFood: String,
+//   priceRange:   String,
+//   avgDeliveryTime: Number,
+//   date: { type: Date, default: Date.now },
+//   meta: {
+//     votes: Number,
+//     favs:  Number
+//   },
+//   menuItems: [
+//   	{item:String, price:Number}
+//   ]
+// });
 
 x.restaurant = mongoose.model('Restaurant', RestaurantSchema);
 // console.log(x.restaurant);
