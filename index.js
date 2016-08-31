@@ -43,10 +43,10 @@ app.set('port', process.env.PORT || 5000);
 //   ]
 // });
 
-x.restaurant = mongoose.model('Restaurant', RestaurantSchema);
-// console.log(x.restaurant);
-console.log("Model and schema created");
-module.exports = x;
+// x.restaurant = mongoose.model('Restaurant', RestaurantSchema);
+// // console.log(x.restaurant);
+// console.log("Model and schema created");
+// module.exports = x;
 
 // set view and engines
 app.set('views', __dirname + '/views');
