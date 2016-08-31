@@ -16,6 +16,16 @@ router.get('/', function(req, res){
 
 // signup
 router.post('/signup', function(req, res){
+	console.log('POSTED ' + req.path);
+	var newEntry = new Restaurant({
+		name: req.body.name,
+		address: req.body.address,
+		number: req.body.number
+	});
+	newEntry.save((err, entry) => {
+		if (err) throw err;
+		console.log(entry, "ENTERED");
+	});
 	res.redirect('/restSignup');
 	
 });
@@ -28,6 +38,21 @@ router.get('/restSignup', function(req, res){
 			res.send(file);
 		}
 	});
+});
+
+router.get('/data', function(req, res){
+	var items = [
+		{name:"Lawrence", price:15, description: "Hella fire tho"},
+		{name:"Amir", price:10, description: "mr deeep dish"},
+		{name:"rob", price:100, description: "Absurdly deep voice"},
+		{name:"Lawrence", price:15, description: "Hella fire tho"},
+		{name:"Lawrence", price:15, description: "Hella fire tho"},
+		{name:"Lawrence", price:15, description: "Hella fire tho"},
+		{name:"Lawrence", price:15, description: "Hella fire tho"},
+	];
+	res.statusCode = 202;
+	res.setHeader('Content-Type', 'application/json');
+	res.send(JSON.stringify(items));	
 });
 
 router.post('/restSignup', function(req, res){
