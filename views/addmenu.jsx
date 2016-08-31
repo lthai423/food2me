@@ -27,25 +27,27 @@ class AddMenuComponent extends React.Component {
 	  this.state = {};
 	}
 
-	render(){
-		return (
-			<Request
-		    url='https://localhost:5000/data'
-		    method='get'
-		    accept='application/json'
-		    verbose={true}
-		  > {
-		      ({error, result, loading}) => {
-		        if (loading) {
-		          return <div>loading...</div>;
-		        } else {
-		          return <div>{ JSON.stringify(result) }</div>;
-		        }
-		      }
-		    }
-		  </Request>
-	  )
-	}
+	// render(){
+	// 	return (
+	// 		<Request
+	// 	    url='https://localhost:5000/data'
+	// 	    method='get'
+	// 	    accept='application/json'
+	// 	    verbose={true}
+	// 	  > {
+	// 	      ({error, result, loading}) => {
+	// 	        if (loading) {
+	// 	          return <div>loading...</div>;
+	// 	        } else {
+	// 	          return <div>{ JSON.stringify(result) }</div>;
+	// 	        }
+	// 	      }
+	// 	    }
+	// 	  </Request>
+	//   )
+	// }
+
+	
 }
 
 
